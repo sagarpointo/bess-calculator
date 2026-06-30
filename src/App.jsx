@@ -194,7 +194,7 @@ export default function App() {
         {/* HERO */}
         <section className='hero'>
           <div className='hero-eyebrow'>
-            Diesel Generator vs Battery Inverter · Savings Calculator
+            Diesel Generator vs BESS · Savings Calculator
           </div>
           <h1 className='hero-title'>
             What is your diesel backup really costing you?
