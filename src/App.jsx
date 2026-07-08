@@ -243,6 +243,66 @@ export default function App() {
             onChange={setGridTariff}
             format={(v) => `₹${v} / unit`}
           />
+        </div>
+
+        {/* 10-YEAR LIFECYCLE BREAKDOWN */}
+        <div className='section-label'>10-year cost comparison</div>
+        <div className='lifecycle'>
+          <div className='lc-head'>
+            <span className='lc-col-label'>Cost head</span>
+            <span className='lc-col-dg'>Diesel</span>
+            <span className='lc-col-bess'>Battery</span>
+          </div>
+
+          <div className='lc-row'>
+            <span className='lc-label'>Machine cost</span>
+            <span className='lc-dg'>{inr(r.dgMachine10Yr)}</span>
+            <span className='lc-bess'>{inr(r.bessMachine10Yr)}</span>
+          </div>
+          <div className='lc-row'>
+            <span className='lc-label'>Maintenance + AMC</span>
+            <span className='lc-dg'>{inr(r.dgMaint10Yr)}</span>
+            <span className='lc-bess'>{inr(r.bessMaint10Yr)}</span>
+          </div>
+          <div className='lc-row'>
+            <span className='lc-label'>Operator salary</span>
+            <span className='lc-dg'>{inr(r.dgOperator10Yr)}</span>
+            <span className='lc-bess'>Zero</span>
+          </div>
+
+          <div className='lc-divider'>
+            <span>Energy / fuel over 10 years</span>
+          </div>
+
+          <div className='lc-row fuel'>
+            <span className='lc-label'>Diesel fuel</span>
+            <span className='lc-dg'>{inr(r.dgFuel10Yr)}</span>
+            <span className='lc-bess'>—</span>
+          </div>
+          <div className='lc-row fuel'>
+            <span className='lc-label'>Grid units</span>
+            <span className='lc-dg'>—</span>
+            <span className='lc-bess'>{inr(r.bessGrid10Yr)}</span>
+          </div>
+
+          <div className='lc-row total'>
+            <span className='lc-label'>10-year total</span>
+            <span className='lc-dg'>{inr(r.dgCost10Yr)}</span>
+            <span className='lc-bess'>{inr(r.bessCost10Yr)}</span>
+          </div>
+
+          <div className='lc-save'>
+            <div className='lc-save-left'>
+              <div className='lc-save-eyebrow'>You save over 10 years</div>
+              <div className='lc-save-big'>{inr(r.save10Yr)}</div>
+            </div>
+            <div className='lc-save-pill'>
+              <div className='lc-save-pct'>{Math.round(r.save10YrPct)}%</div>
+              <div className='lc-save-pct-label'>less spend</div>
+            </div>
+          </div>
+        </div>
+        <div className='inputs-grid'>
           <Slider
             label='Loan Tenure'
             value={tenureYears}
@@ -390,64 +450,6 @@ export default function App() {
             <strong>{Math.round(r.co2TonnesYear)} tonnes of CO₂</strong> a year
             — like planting <strong>{inrNum(r.trees)} trees</strong>.
           </span>
-        </div>
-
-        {/* 10-YEAR LIFECYCLE BREAKDOWN */}
-        <div className='section-label'>10-year cost comparison</div>
-        <div className='lifecycle'>
-          <div className='lc-head'>
-            <span className='lc-col-label'>Cost head</span>
-            <span className='lc-col-dg'>Diesel</span>
-            <span className='lc-col-bess'>Battery</span>
-          </div>
-
-          <div className='lc-row'>
-            <span className='lc-label'>Machine cost</span>
-            <span className='lc-dg'>{inr(r.dgMachine10Yr)}</span>
-            <span className='lc-bess'>{inr(r.bessMachine10Yr)}</span>
-          </div>
-          <div className='lc-row'>
-            <span className='lc-label'>Maintenance + AMC</span>
-            <span className='lc-dg'>{inr(r.dgMaint10Yr)}</span>
-            <span className='lc-bess'>{inr(r.bessMaint10Yr)}</span>
-          </div>
-          <div className='lc-row'>
-            <span className='lc-label'>Operator salary</span>
-            <span className='lc-dg'>{inr(r.dgOperator10Yr)}</span>
-            <span className='lc-bess'>Zero</span>
-          </div>
-
-          <div className='lc-divider'>
-            <span>Energy / fuel over 10 years</span>
-          </div>
-
-          <div className='lc-row fuel'>
-            <span className='lc-label'>Diesel fuel</span>
-            <span className='lc-dg'>{inr(r.dgFuel10Yr)}</span>
-            <span className='lc-bess'>—</span>
-          </div>
-          <div className='lc-row fuel'>
-            <span className='lc-label'>Grid units</span>
-            <span className='lc-dg'>—</span>
-            <span className='lc-bess'>{inr(r.bessGrid10Yr)}</span>
-          </div>
-
-          <div className='lc-row total'>
-            <span className='lc-label'>10-year total</span>
-            <span className='lc-dg'>{inr(r.dgCost10Yr)}</span>
-            <span className='lc-bess'>{inr(r.bessCost10Yr)}</span>
-          </div>
-
-          <div className='lc-save'>
-            <div className='lc-save-left'>
-              <div className='lc-save-eyebrow'>You save over 10 years</div>
-              <div className='lc-save-big'>{inr(r.save10Yr)}</div>
-            </div>
-            <div className='lc-save-pill'>
-              <div className='lc-save-pct'>{Math.round(r.save10YrPct)}%</div>
-              <div className='lc-save-pct-label'>less spend</div>
-            </div>
-          </div>
         </div>
 
         {/* INVESTMENT BREAKDOWN */}

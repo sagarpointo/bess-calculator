@@ -138,7 +138,7 @@ export function calculate({
   const dgCost10Yr = dgMachine10Yr + dgMaint10Yr + dgOperator10Yr + dgFuel10Yr;
 
   const bessMachine10Yr = customerPrice;
-  const bessMaint10Yr = 10000; // AMC ₹10k over 10 yrs
+  const bessMaint10Yr = kva < 100 ? 4000 * 5 : 6000 * 5; // AMC: ₹4k/yr or ₹6k/yr × 5 yrs based on load
   const bessOperator10Yr = 0;
   const bessGrid10Yr = bessCostYear * 10;
   const bessCost10Yr =
